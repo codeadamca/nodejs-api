@@ -1,10 +1,6 @@
 # nodejs-api
 
-A basic example of using Node.js, Express, and MongoDB to provide MongoDB data in a JSON format.
-
-## The End Goal
-
-The end goal of this code is to display a list of members from a MongoDB in JSON. 
+A basic example of using Node.js, Express, and MongoDB to provide a member list from a MongoDB in a JSON format.
 
 ## Steps
 
@@ -32,11 +28,11 @@ npm install express body-parser cors mongoose
 npm install -g nodemon
 ```
 
-nodemon is a NPM package that basically prevents you from having to restart your Node.js file each time you make a change. The package will listen for file changes and restart your Node.js file when detected. 
+> nodemon is a NPM package that basically prevents you from having to restart your Node.js. Each time you make a change, nodemon will restart your Node.js. 
 
 4. Create `index.js` and add the following code:
 
-```
+```nodejs
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
@@ -99,7 +95,7 @@ use sandbox
 
 Add some record to a membrs collection:
 
-```
+```nodejs
 db.members.insertOne({"first":"Jane","last":"Doe","email":"jane.doe@address.com","admin":false});
 db.members.insertOne({"first":"John","last":"Smith","email":"john.smith@address.com","admin":true});
 db.members.insertOne({"first":"Isaiah","last":"Johnson","email":"isaiah.johnson@address.com","admin":true});
@@ -107,7 +103,7 @@ db.members.insertOne({"first":"Isaiah","last":"Johnson","email":"isaiah.johnson@
 
 9. Create a file called `member.model.js` and place it in the root of the project folder. Add the following code:
 
-```
+```nodejs
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 let Member = new Schema({
@@ -119,24 +115,12 @@ let Member = new Schema({
 module.exports = mongoose.model('Member', Member);
 ```
 
-10. Create a file called `index.js` and also place it in the root of the project folder. Add the following code:
-http://localhost:4000/members
+10. After `app.use(bodyParser.json());` add the following code:
 
-```
-const express = require('express');
-const app = express();
-const bodyParser = require('body-parser');
-const cors = require('cors');
-const mongoose = require('mongoose');
-const memberRoutes = express.Router();
-
-const PORT = 4000;
+```nodejs
 const MONGO_PORT = 27017;
 
 let Member = require('./member.model');
-
-app.use(cors());
-app.use(bodyParser.json());
 
 mongoose.connect('mongodb://127.0.0.1:' + MONGO_PORT + '/sandbox', { useNewUrlParser: true });
 const connection = mongoose.connection;
@@ -155,11 +139,9 @@ memberRoutes.route('/').get(function(req, res) {
 });
 
 app.use('/members', memberRoutes);
-
-app.listen(PORT, function() {    
-    console.log("Server is running on Port: " + PORT);
-});
 ```
+
+In a browser you will now be able to view the members list in a JSON format at the URL `http://localhost:4000/members`.
 
 ## Tutorial Requirements:
 
