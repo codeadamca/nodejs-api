@@ -46,7 +46,7 @@ app.listen(PORT, function() {
     console.log("Server is running on Port: " + PORT);
 });
 ```
-4. Start noemon:
+4. Start nodemon:
 
 ```
 nodemon server
