@@ -74,7 +74,7 @@ sudo mkdir -p /data/db
 THen make sure that the `/data/db` directory has the right permissions:
 
 ```
-sudo chown -R \`id -un\` /data/db
+sudo chown -R `id -un` /data/db
 ```
 
 7. Start MongoDB by opening a terminal and running the following command:
