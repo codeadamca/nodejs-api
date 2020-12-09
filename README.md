@@ -161,3 +161,13 @@ app.listen(PORT, function() {
 });
 ```
 
+## Tutorial Requirements:
+
+* [Visual Studio Code](https://code.visualstudio.com/) or [Brackets](http://brackets.io/) (or any code editor)
+* [brew](https://brew.sh/) 
+
+Full tutorial URL: https://codeadam.ca/learning/nodejs-api.html
+
+<a href="https://codeadam.ca">
+<img src="https://codeadam.ca/images/code-block.png" width="100">
+</a>
