@@ -32,7 +32,7 @@ npm install -g nodemon
 
 4. Create `index.js` and add the following code:
 
-```nodejs
+```javascript
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
@@ -95,7 +95,7 @@ use sandbox
 
 Add some record to a membrs collection:
 
-```nodejs
+```javascript
 db.members.insertOne({"first":"Jane","last":"Doe","email":"jane.doe@address.com","admin":false});
 db.members.insertOne({"first":"John","last":"Smith","email":"john.smith@address.com","admin":true});
 db.members.insertOne({"first":"Isaiah","last":"Johnson","email":"isaiah.johnson@address.com","admin":true});
@@ -103,7 +103,7 @@ db.members.insertOne({"first":"Isaiah","last":"Johnson","email":"isaiah.johnson@
 
 9. Create a file called `member.model.js` and place it in the root of the project folder. Add the following code:
 
-```nodejs
+```javascript
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 let Member = new Schema({
@@ -117,7 +117,7 @@ module.exports = mongoose.model('Member', Member);
 
 10. After `app.use(bodyParser.json());` add the following code:
 
-```nodejs
+```javascript
 const MONGO_PORT = 27017;
 
 let Member = require('./member.model');
