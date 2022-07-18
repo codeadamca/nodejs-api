@@ -1,4 +1,4 @@
-# nodejs-api
+# A Basic Example of using Node.js, Express, and MongoDB
 
 A basic example of using Node.js, Express, and MongoDB to provide a member list from a MongoDB in a JSON format.
 
