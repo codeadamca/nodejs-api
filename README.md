@@ -66,8 +66,6 @@ Before we start, [install brew](https://brew.sh/) if you don't already have it i
     ```
     sudo mkdir -p /data/db
     ```
-    
-    > Note: You may need to sue `sudo` when making the db folder.
 
     Then make sure that the `/data/db` directory has the right permissions:
 
@@ -144,6 +142,9 @@ Before we start, [install brew](https://brew.sh/) if you don't already have it i
     ```
 
 In a browser you will now be able to view the members list in a JSON format at the URL `http://localhost:4000/members`.
+
+> [!Note]
+> You may need to use `sudo` when making the db folder.
 
 > Full tutorial URL:  
 > https://codeadam.ca/learning/nodejs-api.html
